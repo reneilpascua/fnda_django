@@ -1,0 +1,21 @@
+# the projection statistics of the top 100 ranked from Fantasy Pros
+projection_statistics = {
+    'points_m': 1212,
+    'points_sd': 353.3,
+    'rebounds_m': 424.95,
+    'rebounds_sd': 173.15,
+    'assists_m': 266.32,
+    'assists_sd': 147.40,
+    'blocks_m': 48.23,
+    'blocks_sd': 35.55,
+    'steals_m': 68.55,
+    'steals_sd': 23.36,
+    'fg_pct_m': 0.4867,
+    'fg_pct_sd': 0.0637,
+    'ft_pct_m': 0.7841,
+    'ft_pct_sd': 0.0832,
+    'threes_m': 110.42,
+    'threes_sd': 68.94,
+    'turnovers_m': 149.30,
+    'turnovers_sd': 54.48,
+} 
