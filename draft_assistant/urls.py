@@ -20,5 +20,6 @@ from register import views as rv
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^assistant/', include('assistant.urls')),
-    url(r'^register/', include('register.urls')),
+    # url(r'^register/', include('register.urls')), # do not use
+    url(r'^users/', include('draft_users.urls'))
 ]

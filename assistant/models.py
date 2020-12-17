@@ -68,16 +68,21 @@ class Draft(models.Model):
     A (mock) draft created by a user
     '''
     name = models.CharField(max_length=50)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.name} by {self.creator}'
 
 class DraftPick(models.Model):
     '''
     A player pick, whether belonging to the user initiating the draft, or someone else.
     '''
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     draft = models.ForeignKey(Draft, on_delete=models.CASCADE)
-    round_number = models.IntegerField()
-    overall_number = models.IntegerField()
-    owned_by_user = models.BooleanField(default=False)
+    round_picked = models.IntegerField()
+    round_place = models.IntegerField(null=True)
+    overall_place = models.IntegerField()
 
-
+    def __str__(self):
+        return f'[Draft ID {self.draft.id}]{self.player.name} by {self.owner} ({self.overall_place})'
