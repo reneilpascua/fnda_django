@@ -44,6 +44,25 @@ class Player(models.Model):
     def __str__(self):
         return f'{self.name} ({self.team})'
 
+class ZScoreSet(models.Model):
+    '''
+    Represent's a player's Z scores as opposed to their raw stats
+    '''
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+
+    pointsZ = models.FloatField()
+    reboundsZ = models.FloatField()
+    assistsZ = models.FloatField()
+    blocksZ = models.FloatField()
+    stealsZ = models.FloatField()
+    fg_pctZ = models.FloatField()
+    ft_pctZ = models.FloatField()
+    threesZ = models.FloatField()
+    turnoversZ = models.FloatField()
+
+    def __str__(self):
+        return f'{self.player.name}\'s z-scores'
+
 class Draft(models.Model):
     '''
     A (mock) draft created by a user

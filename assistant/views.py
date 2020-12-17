@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 class TestView(TemplateView):
-    template_name = 'test.html'
+    template_name = 'assistant/test.html'
 
 class PlayerListView(TemplateView):
-    template_name = 'playerlist.html'
+    template_name = 'assistant/playerlist.html'
